@@ -24,12 +24,15 @@ import os
 
 current_language = os.getenv("LANG", "en_US")[:5]
 
-msg = "Hello, World"
 
-if current_language == "en_US":
-    msg = "Ola, Mundo!"
+msg = {
+    "en_US": "Hello, World",
+    "pt_BR": "Ola, Mundo",
+    "it_IT": "Ciao, Mondo",
+    "fr_FR": "Bonjour, Monde",
 
-elif current_language =="it_IT":
-    msg = "Ciao, Mondo!"
-	
-print (msg)
+    }
+
+# O(1) - constante
+print (msg[current_language])
+
